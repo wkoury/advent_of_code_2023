@@ -14,6 +14,16 @@ func main() {
 		fmt.Println("error", err)
 	}
 	contentString := string(content)
+	contentString = strings.ReplaceAll(contentString, "one", "one1one")
+	contentString = strings.ReplaceAll(contentString, "two", "two2two")
+	contentString = strings.ReplaceAll(contentString, "three", "three3three")
+	contentString = strings.ReplaceAll(contentString, "four", "four4four")
+	contentString = strings.ReplaceAll(contentString, "five", "five5five")
+	contentString = strings.ReplaceAll(contentString, "six", "six6six")
+	contentString = strings.ReplaceAll(contentString, "seven", "seven7seven")
+	contentString = strings.ReplaceAll(contentString, "eight", "eight8eight")
+	contentString = strings.ReplaceAll(contentString, "nine", "nine9nine")
+
 	lines := strings.Split(contentString, "\n")
 
 	sum := 0
