@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, world!")
 	content, err := os.ReadFile("input.txt")
 	if err != nil {
 		fmt.Println("error", err)
