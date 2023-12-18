@@ -67,6 +67,10 @@ func isGamePossible(game Game) bool {
 	return game.redCount > 12 || game.greenCount > 13 || game.blueCount > 14
 }
 
+func computeGamePowerSet(game Game) int {
+	return game.redCount * game.blueCount * game.greenCount
+}
+
 func main() {
 	bytes, err := os.ReadFile("input.txt")
 	if err != nil {
@@ -75,6 +79,7 @@ func main() {
 	contents := string(bytes)
 
 	sum := 0
+	sum2 := 0
 
 	lines := strings.Split(contents, "\n")
 	for _, line := range lines {
@@ -83,7 +88,10 @@ func main() {
 		if !isGamePossible(game) {
 			sum += game.id
 		}
+
+		sum2 += computeGamePowerSet(game)
 	}
 
 	fmt.Println(sum)
+	fmt.Println(sum2)
 }
